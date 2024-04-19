@@ -1,12 +1,6 @@
 import express, { Router, Request, Response } from 'express'
 import {connectDB} from "./src/db/service/util-service";
 import "dotenv/config";
-import UserRoleModel from './src/db/models/userRole-model';
-import UserModel from './src/db/models/user-model';
-import LectureType from './src/db/models/lectureType-model';
-import Lecture from './src/db/models/lecture-model';
-import MemberRoleModel from './src/db/models/memberRole-model';
-import MemberModel from './src/db/models/member-model';
 
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
