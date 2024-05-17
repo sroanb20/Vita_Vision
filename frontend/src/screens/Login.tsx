@@ -1,23 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from "react-native";
+import {IUser} from "../interface/IUser";
 
-const Login = () => {
+
+const Login = ({navigation}) => {
+    const [enteredUser, setEnteredUser] = useState("");
+    const [enteredPassword, setEnteredPassword] = useState("");
+
+    const [user, setUser] = useState<IUser[]>([{ name: 'user1', password: 'password123' },
+        { name: 'user2', password: 'mypassword' },
+        { name: 'user3', password: 'secretpass' }])
+
+    function onLogin() {
+        let count = 0;
+
+        user.map(u => {
+            if (u.name === enteredUser) {
+                if (u.password === enteredPassword) {
+                    navigation.navigate('Main');
+
+                    return;
+                }
+            }
+
+            count++;
+        });
+
+        if(count === user.length) {
+            alert("wrong entries");
+        }
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>Login</Text>
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Username</Text>
-                <TextInput style={styles.inputFields} placeholder="Enter username ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredUser} placeholder="Enter username ..."/>
             </View>
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Password</Text>
-                <TextInput style={styles.inputFields} placeholder="Enter password ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredPassword} placeholder="Enter password ..."/>
             </View>
 
             <View style={styles.btLogin}>
-                <Button color={"#00b200"} title={"Login"}/>
+                <Button color={"#00b200"} title={"Login"} onPress={onLogin}/>
             </View>
 
             <View style={styles.btCancel}>

@@ -1,7 +1,11 @@
 import React from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from "react-native";
 
-const Register = () => {
+const Register = ({navigation}) => {
+    function onRegistration() {
+        navigation.navigate('Home');
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>Register</Text>
@@ -27,7 +31,7 @@ const Register = () => {
             </View>
 
             <View style={styles.btRegister}>
-                <Button color={"#00b200"} title={"Register"}/>
+                <Button color={"#00b200"} title={"Register"} onPress={onRegistration}/>
             </View>
 
             <View style={styles.btCancel}>

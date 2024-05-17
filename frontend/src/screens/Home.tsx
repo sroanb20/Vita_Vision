@@ -1,7 +1,17 @@
 import React from 'react';
-import {Button, ImageBackground, StyleSheet, View} from "react-native";
+import {Button, ImageBackground, StyleSheet, Text, View} from "react-native";
 
-const Home = () => {
+
+
+const Home = ({ navigation }) => {
+    function onLoginClick() {
+        navigation.navigate('Login');
+    }
+
+    function onRegistrationClick() {
+        navigation.navigate('Registration');
+    }
+
     return (
         <>
             <ImageBackground style={styles.bg} source={require("../../assets/VitaVisionBackground.png")}>
@@ -9,11 +19,11 @@ const Home = () => {
                 <View style={styles.container}>
 
                     <View style={styles.btLogin}>
-                        <Button color={"#00b200"} title={"Login"}/>
+                        <Button color={"#00b200"} title={"Login"} onPress={onLoginClick}/>
                     </View>
 
                     <View style={styles.btRegister}>
-                        <Button color={"#00b200"} title={"Register"}/>
+                        <Button color={"#00b200"} title={"Register"} onPress={onRegistrationClick}/>
                     </View>
 
                 </View>
