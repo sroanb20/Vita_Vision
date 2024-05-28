@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from "react-native";
-import {IUser} from "../interface/IUser";
+import {IUser} from "../interfaces/IUser";
+import axiosContext from "../context/AxiosContext";
 
 
-const Login = ({navigation}) => {
+const Login = async ({navigation}) => {
     const [enteredUser, setEnteredUser] = useState("");
     const [enteredPassword, setEnteredPassword] = useState("");
 
-    const [user, setUser] = useState<IUser[]>([{ name: 'user1', password: 'password123' },
-        { name: 'user2', password: 'mypassword' },
-        { name: 'user3', password: 'secretpass' }])
+    const [user, setUser] = useState<IUser[]>(await axiosContext.getUsers());
 
     function onLogin() {
         let count = 0;
@@ -26,7 +25,7 @@ const Login = ({navigation}) => {
             count++;
         });
 
-        if(count === user.length) {
+        if (count === user.length) {
             alert("wrong entries");
         }
     }
@@ -42,7 +41,8 @@ const Login = ({navigation}) => {
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Password</Text>
-                <TextInput style={styles.inputFields} onChangeText={setEnteredPassword} placeholder="Enter password ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredPassword}
+                           placeholder="Enter password ..."/>
             </View>
 
             <View style={styles.btLogin}>
