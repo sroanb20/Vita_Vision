@@ -19,6 +19,8 @@ const Login = ({navigation}) => {
         const initialUsers: IUser[] = await axiosContext.getUsers();
         setUsers(initialUsers)
 
+        console.log(users )
+
         users.map(u => {
             if (u.name === enteredUser) {
                 if (u.password === enteredPassword) {
