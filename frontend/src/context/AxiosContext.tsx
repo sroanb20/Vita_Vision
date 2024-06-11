@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { IUser } from "../interfaces/IUser";
+import {IUser} from "../interfaces/IUser";
 
-const baseURL = 'http://10.0.2.2:8080/vitamins'; // Emulator URL
+const baseURL = 'http://localhost:8080/vitamins'; // Emulator URL
 
 const axiosContext = {
     async getUsers() {
