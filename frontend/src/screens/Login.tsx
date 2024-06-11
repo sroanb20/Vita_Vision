@@ -23,6 +23,8 @@ const Login = ({navigation}) => {
     }, []);
     
     async function onLogin() {
+        alert(users)
+        
         users.forEach(u => {
             if (u.name === enteredUser && u.password === enteredPassword) {
                 navigation.navigate('Main');
