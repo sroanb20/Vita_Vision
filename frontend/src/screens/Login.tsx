@@ -21,26 +21,13 @@ const Login = ({navigation}) => {
 
         fetchUsers();
     }, []);
-
-    // const [user, setUser] = useState<IUser[]>([{ name: 'user1', email: 'test@gmail.com', password: 'password123' },
-    //     { name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
-    //     { name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
-
+    
     async function onLogin() {
-
-        users.map(u => {
-            if (u.name === enteredUser) {
-                if (u.password === enteredPassword) {
-                    navigation.navigate('Main');
-
-                    return;
-                }
+        users.forEach(u => {
+            if (u.name === enteredUser && u.password === enteredPassword) {
+                navigation.navigate('Main');
             }
         });
-
-        // if (count === users.length) {
-        //     alert("wrong entries");
-        // }
     }
 
     function onCancel() {
