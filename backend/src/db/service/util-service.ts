@@ -2,8 +2,9 @@ import mongoose from 'mongoose';
 
 export async function connectDB() {
     // const mongoURI = process.env.MONGODB_URI;
-    const mongoURI = "mongodb://localhost:27017/VitaVision";
-
+    const mongoURI = "mongodb+srv://jakleb20:Oywnmc5qjTs30SFE@vitavision.xdk6caz.mongodb.net/?retryWrites=true&w=majority&appName=VitaVision";
+    const url = "mongodb+srv://jakleb20:<password>@vitavision.xdk6caz.mongodb.net/";
+    
     if (!mongoURI) {
         console.error('MONGODB_URI is not defined in environment variables.');
         process.exit(1);
