@@ -6,6 +6,7 @@ import IUser from "./src/db/models/user-model";
 import IUserModel from "./src/db/models/user-model";
 import IFoodModel from "./src/db/models/food-model";
 
+
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
