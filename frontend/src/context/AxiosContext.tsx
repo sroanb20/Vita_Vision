@@ -12,7 +12,7 @@ const axiosContext = {
             response.data.map((user: any) => (users.push(user as IUser)));
             return users;
         } catch (error:any) {
-            throw new Error('Fehler beim Abrufen der Members: ', error.message);
+            throw new Error('Fehler beim Abrufen der Users: ', error.message);
         }
     },
 

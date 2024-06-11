@@ -11,15 +11,13 @@ const Login = ({navigation}) => {
     
     
 
-    const [user, setUser] = useState<IUser[]>([{ name: 'user1', email: 'test@gmail.com', password: 'password123' },
-        { name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
-        { name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
+    // const [user, setUser] = useState<IUser[]>([{ name: 'user1', email: 'test@gmail.com', password: 'password123' },
+    //     { name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
+    //     { name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
 
     async function onLogin() {
-        let count = 0;
-
         const initialUsers: IUser[] = await axiosContext.getUsers();
-        setUser(initialUsers)
+        setUsers(initialUsers)
 
         users.map(u => {
             if (u.name === enteredUser) {
@@ -29,13 +27,11 @@ const Login = ({navigation}) => {
                     return;
                 }
             }
-
-            count++;
         });
 
-        if (count === user.length) {
-            alert("wrong entries");
-        }
+        // if (count === users.length) {
+        //     alert("wrong entries");
+        // }
     }
 
     function onCancel() {
