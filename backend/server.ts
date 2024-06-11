@@ -85,19 +85,21 @@ async function insertTestData() {
 
     const testUsers = [
         {
-            name: 'John Doe',
-            password: 'password123'
+            name: 'Leon',
+            password: 'Leon',
+            email: 'someosdjfö'
         },
         {
             name: 'Jane Smith',
-            password: 'password456'
+            password: 'password456',
+            email: 'someosdjfö'
         }
         // Weitere Testbenutzer hinzufügen
     ];
 
     try {
-        await IFoodModel.insertMany(testFoods);
-        console.log('Testdaten für Lebensmittel erfolgreich eingefügt');
+        // await IFoodModel.insertMany(testFoods);
+        // console.log('Testdaten für Lebensmittel erfolgreich eingefügt');
 
         await IUserModel.insertMany(testUsers);
         console.log('Testdaten für Benutzer erfolgreich eingefügt');
