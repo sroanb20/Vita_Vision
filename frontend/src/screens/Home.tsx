@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
 
                     <View style={styles.btLogin}>
                         <Button color={"#00b200"} title={"Login"} onPress={onLoginClick}/>
-                    </View>
+                    </View> 
 
                     <View style={styles.btRegister}>
                         <Button color={"#00b200"} title={"Register"} onPress={onRegistrationClick}/>
