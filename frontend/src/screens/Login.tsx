@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from "react-native";
 import {IUser} from "../interfaces/IUser";
 import axiosContext from "../context/AxiosContext";
@@ -8,18 +8,25 @@ const Login = ({navigation}) => {
     const [users, setUsers] = useState<IUser[]>([])
     const [enteredUser, setEnteredUser] = useState("");
     const [enteredPassword, setEnteredPassword] = useState("");
-    
-    
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const initialUsers: IUser[] = await axiosContext.getUsers();
+                setUsers(initialUsers);
+            } catch (error) {
+                console.error("Error fetching users:", error);
+            }
+        };
+
+        fetchUsers();
+    }, []);
 
     // const [user, setUser] = useState<IUser[]>([{ name: 'user1', email: 'test@gmail.com', password: 'password123' },
     //     { name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
     //     { name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
 
     async function onLogin() {
-        const initialUsers: IUser[] = await axiosContext.getUsers();
-        setUsers(initialUsers)
-
-        console.log(users )
 
         users.map(u => {
             if (u.name === enteredUser) {
@@ -61,6 +68,8 @@ const Login = ({navigation}) => {
             <View style={styles.btCancel}>
                 <Button color={"grey"} title={"Cancel"} onPress={onCancel}/>
             </View>
+            
+            
         </View>
     );
 };
