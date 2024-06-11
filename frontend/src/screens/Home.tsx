@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
 
     btLogin: {
         width: "66%",
-        top: 600
+        top: 530
     },
 
     btRegister: {
         width: "66%",
-        top: 610
+        top: 540
     }
 });
 

@@ -1,9 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from "react-native";
+import {IUser} from "../interface/IUser";
 
 const Register = ({navigation}) => {
-    function onRegistration() {
+    function onCancel() {
         navigation.navigate('Home');
+    }
+
+    const [enteredUsername, setEnteredUsername] = useState("");
+    const [enteredEmail, setEnteredEmail] = useState("");
+    const [enteredPassword, setEnteredPassword] = useState("");
+    const [reenteredPassword, setReenteredPassword] = useState("");
+
+    function onRegistration() {
+        if (enteredPassword === reenteredPassword) {
+            let user:IUser = {name: enteredUsername, email: enteredEmail, password: enteredPassword};
+
+            onCancel();
+
+            alert('User successfully created!');
+        } else {
+            alert('check your input!');
+        }
     }
 
     return (
@@ -12,22 +30,22 @@ const Register = ({navigation}) => {
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Username</Text>
-                <TextInput style={styles.inputFields} placeholder="Enter username ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredUsername} placeholder="Enter username ..."/>
             </View>
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>E-Mail</Text>
-                <TextInput style={styles.inputFields} placeholder="Enter email ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredEmail} placeholder="Enter email ..."/>
             </View>
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Password</Text>
-                <TextInput style={styles.inputFields} placeholder="Enter password ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredPassword} secureTextEntry={true} placeholder="Enter password ..."/>
             </View>
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Confirm password</Text>
-                <TextInput style={styles.inputFields} placeholder="Reenter password ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setReenteredPassword} secureTextEntry={true} placeholder="Reenter password ..."/>
             </View>
 
             <View style={styles.btRegister}>
@@ -35,7 +53,7 @@ const Register = ({navigation}) => {
             </View>
 
             <View style={styles.btCancel}>
-                <Button color={"grey"} title={"Cancel"}/>
+                <Button color={"grey"} title={"Cancel"} onPress={onCancel}/>
             </View>
         </View>
     );

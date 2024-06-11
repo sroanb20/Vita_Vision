@@ -7,9 +7,9 @@ const Login = ({navigation}) => {
     const [enteredUser, setEnteredUser] = useState("");
     const [enteredPassword, setEnteredPassword] = useState("");
 
-    const [user, setUser] = useState<IUser[]>([{ name: 'user1', password: 'password123' },
-        { name: 'user2', password: 'mypassword' },
-        { name: 'user3', password: 'secretpass' }])
+    const [user, setUser] = useState<IUser[]>([{ name: 'user1', email: 'test@gmail.com', password: 'password123' },
+        { name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
+        { name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
 
     function onLogin() {
         let count = 0;
@@ -31,6 +31,10 @@ const Login = ({navigation}) => {
         }
     }
 
+    function onCancel() {
+        navigation.navigate('Home');
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>Login</Text>
@@ -42,7 +46,7 @@ const Login = ({navigation}) => {
 
             <View style={styles.inputContainer}>
                 <Text style={styles.labelText}>Password</Text>
-                <TextInput style={styles.inputFields} onChangeText={setEnteredPassword} placeholder="Enter password ..."/>
+                <TextInput style={styles.inputFields} onChangeText={setEnteredPassword} secureTextEntry={true} placeholder="Enter password ..."/>
             </View>
 
             <View style={styles.btLogin}>
@@ -50,7 +54,7 @@ const Login = ({navigation}) => {
             </View>
 
             <View style={styles.btCancel}>
-                <Button color={"grey"} title={"Cancel"}/>
+                <Button color={"grey"} title={"Cancel"} onPress={onCancel}/>
             </View>
         </View>
     );
