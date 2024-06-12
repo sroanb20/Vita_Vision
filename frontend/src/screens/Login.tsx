@@ -9,7 +9,7 @@ const Login = ({navigation}) => {
     const [enteredUser, setEnteredUser] = useState("");
     const [enteredPassword, setEnteredPassword] = useState("");
 
-    useEffect(() => {
+    /*useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const initialUsers: IUser[] = await axiosContext.getUsers();
@@ -20,16 +20,27 @@ const Login = ({navigation}) => {
         };
 
         fetchUsers();
-    }, []);
-    
+    }, []);*/
+
+    const [user, setUser] = useState<IUser[]>([{_id:"1", name: 'user1', email: 'test@gmail.com', password: 'password123' },
+         {_id:"2", name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
+         {_id:"3", name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
+
     async function onLogin() {
-        alert(users)
-        
-        users.forEach(u => {
-            if (u.name === enteredUser && u.password === enteredPassword) {
-                navigation.navigate('Main');
+
+        user.map(u => {
+            if (u.name === enteredUser) {
+                if (u.password === enteredPassword) {
+                    navigation.navigate('Main');
+
+                    return;
+                }
             }
         });
+
+        /*if (count === users.length) {
+             alert("wrong entries");
+        }*/
     }
 
     function onCancel() {
@@ -49,6 +60,10 @@ const Login = ({navigation}) => {
                 <Text style={styles.labelText}>Password</Text>
                 <TextInput style={styles.inputFields} onChangeText={setEnteredPassword} secureTextEntry={true} placeholder="Enter password ..."/>
             </View>
+
+        <Text>
+            {enteredPassword}
+        </Text>
 
             <View style={styles.btLogin}>
                 <Button color={"#00b200"} title={"Login"} onPress={onLogin}/>

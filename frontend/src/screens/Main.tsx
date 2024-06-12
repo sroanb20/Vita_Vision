@@ -1,64 +1,51 @@
 import React from 'react';
-import {View, StyleSheet, ProgressBarAndroid, Text} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
+import * as Progress from 'react-native-progress'
 
 const Main = () => {
 
     return (
         <>
             <View style={styles.container}>
-                <View style={styles.example}>
+                <View>
                     <Text>Vitamin A</Text>
-                    <ProgressBarAndroid
-                        styleAttr="Horizontal"
-                        indeterminate={false}
-                        progress={0.20}
-                    />
+                    <Progress.Bar progress={0.20} animated={false} color={"#00b200"} style={styles.bar}/>
                 </View>
             </View>
 
             <View style={styles.container}>
-                <View style={styles.example}>
+                <View>
                     <Text>Vitamin B</Text>
-                    <ProgressBarAndroid
-                        styleAttr="Horizontal"
-                        indeterminate={false}
-                        progress={0.78}
-                    />
+                    <Progress.Bar progress={0.60} animated={false} color={"#00b200"} style={styles.bar}/>
                 </View>
             </View>
 
             <View style={styles.container}>
-                <View style={styles.example}>
+                <View>
                     <Text>Vitamin B12</Text>
-                    <ProgressBarAndroid
-                        styleAttr="Horizontal"
-                        indeterminate={false}
-                        progress={0.60}
-                    />
+                    <Progress.Bar progress={0.44} animated={false} color={"#00b200"} style={styles.bar}/>
                 </View>
             </View>
 
             <View style={styles.container}>
-                <View style={styles.example}>
-                    <Text>Vitamin C</Text>
-                    <ProgressBarAndroid
-                        styleAttr="Horizontal"
-                        indeterminate={false}
-                        progress={1.0}
-                    />
+                <View>
+                    <Text>Vitamin D</Text>
+                    <Progress.Bar progress={1} animated={false} color={"#00b200"} style={styles.bar}/>
                 </View>
             </View>
+
         </>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
+        marginLeft: 10,
+        top: 20
     },
-    example: {
-        marginVertical: 24,
-        width: 380,
-        marginLeft: 10
+    bar: {
+        marginVertical: 20,
+        width: 350
     },
 });
 
