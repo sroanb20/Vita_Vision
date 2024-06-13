@@ -26,16 +26,30 @@ const Main = ({navigation}: any) => {
         { _id: "test4", name: "Orange", amount: 0, vitaminC: 53.2, vitaminA: 225 },
         { _id: "test5", name: "Spinat", amount: 0, vitaminA: 469, vitaminC: 28.1, vitaminK: 482.9 },
         { _id: "test6", name: "Karotte", amount: 0, vitaminA: 835, vitaminK: 13.2 },
-        { _id: "test7", name: "Erdbeere", amount: 0, vitaminC: 59.1, vitaminB9: 24 },
+        { _id: "test7", name: "Erdbeere", amount: 7, vitaminC: 59.1, vitaminB9: 24 },
         { _id: "test8", name: "Brokkoli", amount: 0, vitaminC: 89.2, vitaminK: 101.6 },
         { _id: "test9", name: "Mango", amount: 0, vitaminA: 54, vitaminC: 36.4, vitaminE: 1.2 },
-        { _id: "test10", name: "Tomate", amount: 0, vitaminA: 42, vitaminC: 13.7, vitaminK: 7.9 },
+        { _id: "test10", name: "Tomate", amount: 1, vitaminA: 42, vitaminC: 13.7, vitaminK: 7.9 },
         { _id: "test11", name: "Kirsche", amount: 0, vitaminC: 7, vitaminA: 64, vitaminE: 0.3 },
         { _id: "test12", name: "Avocado", amount: 0, vitaminB5: 1.4, vitaminK: 21, vitaminE: 2.1 },
         { _id: "test13", name: "Blaubeere", amount: 0, vitaminC: 9.7, vitaminK: 19.3, vitaminE: 0.6 },
         { _id: "test14", name: "Kiwi", amount: 0, vitaminC: 92.7, vitaminK: 40.3, vitaminE: 1.5 },
         { _id: "test15", name: "Paprika", amount: 0, vitaminC: 127.7, vitaminA: 157, vitaminB6: 0.3 }
     ]);
+
+    const [vitaminAGoal, setVitaminAGoal] = useState(700);
+    const [vitaminB1Goal, setVitaminB1Goal] = useState(400);
+    const [vitaminB2Goal, setVitaminB2Goal] = useState(200);
+    const [vitaminB3Goal, setVitaminB3Goal] = useState(460);
+    const [vitaminB5Goal, setVitaminB5Goal] = useState(330);
+    const [vitaminB6Goal, setVitaminB6Goal] = useState(260);
+    const [vitaminB7Goal, setVitaminB7Goal] = useState(500);
+    const [vitaminB9Goal, setVitaminB9Goal] = useState(300);
+    const [vitaminB12Goal, setVitaminB12Goal] = useState(800);
+    const [vitaminCGoal, setVitaminCGoal] = useState(450);
+    const [vitaminDGoal, setVitaminDGoal] = useState(240);
+    const [vitaminEGoal, setVitaminEGoal] = useState(690);
+    const [vitaminKGoal, setVitaminKGoal] = useState(640);
 
     const calculateCurrentVitamins = () => {
         let totalVitaminA = 0;
@@ -131,104 +145,104 @@ const Main = ({navigation}: any) => {
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin A</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminA} / 100</Text>
+                        <ProgressBar progress={vitaminA/vitaminAGoal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminA} / {vitaminAGoal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B1</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB1} / 100</Text>
+                        <ProgressBar progress={vitaminB1 / vitaminB1Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB1} / {vitaminB1Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B2</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB2} / 100</Text>
+                        <ProgressBar progress={vitaminB2 / vitaminB2Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB2} / {vitaminB2Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B3</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB3} / 100</Text>
+                        <ProgressBar progress={vitaminB3 / vitaminB3Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB3} / {vitaminB3Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B5</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB5} / 100</Text>
+                        <ProgressBar progress={vitaminB5 / vitaminB5Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB5} / {vitaminB5Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B6</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB6} / 100</Text>
+                        <ProgressBar progress={vitaminB6 / vitaminB6Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB6} / {vitaminB6Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B7</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB7} / 100</Text>
+                        <ProgressBar progress={vitaminB7 / vitaminB7Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB7} / {vitaminB7Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B9</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB9} / 100</Text>
+                        <ProgressBar progress={vitaminB9 / vitaminB9Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB9} / {vitaminB9Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin B12</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminB12} / 100</Text>
+                        <ProgressBar progress={vitaminB12 / vitaminB12Goal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminB12} / {vitaminB12Goal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin C</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminC} / 100</Text>
+                        <ProgressBar progress={vitaminC / vitaminCGoal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminC} / {vitaminCGoal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin D</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminD} / 100</Text>
+                        <ProgressBar progress={vitaminD / vitaminDGoal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminD} / {vitaminDGoal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin E</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminE} / 100</Text>
+                        <ProgressBar progress={vitaminE / vitaminEGoal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminE} / {vitaminEGoal}</Text>
                     </View>
                 </View>
 
                 <View style={styles.container}>
                     <View>
                         <Text>Vitamin K</Text>
-                        <ProgressBar progress={0.5} color={"#00b200"} style={styles.bar} />
-                        <Text style={styles.statusText}>{vitaminK} / 100</Text>
+                        <ProgressBar progress={vitaminK / vitaminKGoal} color={"#00b200"} style={styles.bar} />
+                        <Text style={styles.statusText}>{vitaminK} / {vitaminKGoal}</Text>
                     </View>
                 </View>
             </ScrollView>

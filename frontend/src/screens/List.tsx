@@ -5,16 +5,16 @@ import {IFood} from "../interfaces/IFood";
 const List = ({navigation}: any) => {
 
     const [registeredFood, setRegisteredFood] = useState<IFood[]>([
-        { _id: "test1", name: "Apfel", amount: 0, vitaminA: 12, vitaminC: 14 },
+        { _id: "test1", name: "Apfel", amount: 2, vitaminA: 12, vitaminC: 14 },
         { _id: "test2", name: "Banane", amount: 0, vitaminB12: 32, vitaminB6: 0.4 },
-        { _id: "test3", name: "Birne", amount: 0, vitaminA: 17, vitaminB12: 2 },
+        { _id: "test3", name: "Birne", amount: 5, vitaminA: 17, vitaminB12: 2 },
         { _id: "test4", name: "Orange", amount: 0, vitaminC: 53.2, vitaminA: 225 },
         { _id: "test5", name: "Spinat", amount: 0, vitaminA: 469, vitaminC: 28.1, vitaminK: 482.9 },
         { _id: "test6", name: "Karotte", amount: 0, vitaminA: 835, vitaminK: 13.2 },
-        { _id: "test7", name: "Erdbeere", amount: 0, vitaminC: 59.1, vitaminB9: 24 },
+        { _id: "test7", name: "Erdbeere", amount: 7, vitaminC: 59.1, vitaminB9: 24 },
         { _id: "test8", name: "Brokkoli", amount: 0, vitaminC: 89.2, vitaminK: 101.6 },
         { _id: "test9", name: "Mango", amount: 0, vitaminA: 54, vitaminC: 36.4, vitaminE: 1.2 },
-        { _id: "test10", name: "Tomate", amount: 0, vitaminA: 42, vitaminC: 13.7, vitaminK: 7.9 },
+        { _id: "test10", name: "Tomate", amount: 1, vitaminA: 42, vitaminC: 13.7, vitaminK: 7.9 },
         { _id: "test11", name: "Kirsche", amount: 0, vitaminC: 7, vitaminA: 64, vitaminE: 0.3 },
         { _id: "test12", name: "Avocado", amount: 0, vitaminB5: 1.4, vitaminK: 21, vitaminE: 2.1 },
         { _id: "test13", name: "Blaubeere", amount: 0, vitaminC: 9.7, vitaminK: 19.3, vitaminE: 0.6 },

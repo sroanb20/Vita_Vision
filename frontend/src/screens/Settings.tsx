@@ -4,19 +4,19 @@ import Slider from '@react-native-community/slider';
 
 const Settings = ({navigation} : any) => {
 
-    const [vitaminAGoal, setVitaminAGoal] = useState(100);
-    const [vitaminB1Goal, setVitaminB1Goal] = useState(100);
-    const [vitaminB2Goal, setVitaminB2Goal] = useState(100);
-    const [vitaminB3Goal, setVitaminB3Goal] = useState(100);
-    const [vitaminB5Goal, setVitaminB5Goal] = useState(100);
-    const [vitaminB6Goal, setVitaminB6Goal] = useState(100);
-    const [vitaminB7Goal, setVitaminB7Goal] = useState(100);
-    const [vitaminB9Goal, setVitaminB9Goal] = useState(100);
-    const [vitaminB12Goal, setVitaminB12Goal] = useState(100);
-    const [vitaminCGoal, setVitaminCGoal] = useState(100);
-    const [vitaminDGoal, setVitaminDGoal] = useState(100);
-    const [vitaminEGoal, setVitaminEGoal] = useState(100);
-    const [vitaminKGoal, setVitaminKGoal] = useState(100);
+    const [vitaminAGoal, setVitaminAGoal] = useState(700);
+    const [vitaminB1Goal, setVitaminB1Goal] = useState(400);
+    const [vitaminB2Goal, setVitaminB2Goal] = useState(200);
+    const [vitaminB3Goal, setVitaminB3Goal] = useState(460);
+    const [vitaminB5Goal, setVitaminB5Goal] = useState(330);
+    const [vitaminB6Goal, setVitaminB6Goal] = useState(260);
+    const [vitaminB7Goal, setVitaminB7Goal] = useState(500);
+    const [vitaminB9Goal, setVitaminB9Goal] = useState(300);
+    const [vitaminB12Goal, setVitaminB12Goal] = useState(800);
+    const [vitaminCGoal, setVitaminCGoal] = useState(450);
+    const [vitaminDGoal, setVitaminDGoal] = useState(240);
+    const [vitaminEGoal, setVitaminEGoal] = useState(690);
+    const [vitaminKGoal, setVitaminKGoal] = useState(640);
 
     const onMoveList = () => {
         navigation.navigate('List');

@@ -1,7 +1,9 @@
 import app from './app';
 import dotenv from 'dotenv';
+import path from 'path';
 
-dotenv.config();
+// Load environment variables from db.env file
+dotenv.config({ path: path.resolve(__dirname, '../db.env') });
 
 const PORT = process.env.PORT || 5000;
 
