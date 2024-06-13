@@ -4,43 +4,27 @@ import {IUser} from "../interfaces/IUser";
 import axiosContext from "../context/AxiosContext";
 
 
-const Login = ({navigation}) => {
+const Login = ({navigation}: any) => {
     const [users, setUsers] = useState<IUser[]>([])
     const [enteredUser, setEnteredUser] = useState("");
     const [enteredPassword, setEnteredPassword] = useState("");
 
-    /*useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const initialUsers: IUser[] = await axiosContext.getUsers();
-                setUsers(initialUsers);
-            } catch (error) {
-                console.error("Error fetching users:", error);
-            }
-        };
-
-        fetchUsers();
-    }, []);*/
-
-    const [user, setUser] = useState<IUser[]>([{_id:"1", name: 'user1', email: 'test@gmail.com', password: 'password123' },
+    const [user, setUser] = useState<IUser[]>([{_id:"1", name: 'User1', email: 'test@gmail.com', password: 'Password123' },
          {_id:"2", name: 'user2', email: 'test@gmail.com', password: 'mypassword' },
-         {_id:"3", name: 'user3', email: 'test@gmail.com', password: 'secretpass' }])
+         {_id:"3", name: 'user3', email: 'test@gmail.com', password: 'secretpass' },
+         {_id:"4", name: '1', email: 'test@gmail.com', password: '1' }]);
 
     async function onLogin() {
 
         user.map(u => {
             if (u.name === enteredUser) {
                 if (u.password === enteredPassword) {
-                    navigation.navigate('Main');
+                    navigation.navigate('Your Statistics');
 
                     return;
                 }
             }
         });
-
-        /*if (count === users.length) {
-             alert("wrong entries");
-        }*/
     }
 
     function onCancel() {
@@ -72,8 +56,7 @@ const Login = ({navigation}) => {
             <View style={styles.btCancel}>
                 <Button color={"grey"} title={"Cancel"} onPress={onCancel}/>
             </View>
-            
-            
+
         </View>
     );
 };

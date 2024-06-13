@@ -1,9 +1,7 @@
 import React from 'react';
 import {Button, ImageBackground, StyleSheet, Text, View} from "react-native";
 
-
-
-const Home = ({ navigation }) => {
+const Home = ({ navigation }:any) => {
     function onLoginClick() {
         navigation.navigate('Login');
     }

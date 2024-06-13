@@ -7,23 +7,27 @@ import {createNativeStackNavigator} from "react-native-screens/native-stack";
 import Home from "./src/screens/Home";
 import Main from "./src/screens/Main";
 import List from "./src/screens/List";
+import React from "react";
+import Settings from "./src/screens/Settings";
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name={"Home"} component={Home}/>
-          <Stack.Screen name={"Login"} component={Login}/>
-          <Stack.Screen name={"Registration"} component={Register}/>
-          <Stack.Screen name={"Main"} component={List}/>
+      <>
+          <NavigationContainer>
+              <Stack.Navigator>
+                  <Stack.Screen name={"Home"} component={Home}/>
+                  <Stack.Screen name={"Login"} component={Login}/>
+                  <Stack.Screen name={"Registration"} component={Register}/>
 
-          {/*<View style={styles.container}>
-            <Login/>
-          </View>*/}
-        </Stack.Navigator>
-      </NavigationContainer>
+                  <Stack.Screen name={"Your Statistics"} component={Main}/>
+                  <Stack.Screen name={"List"} component={List}/>
+                  <Stack.Screen name={"Settings"} component={Settings}/>
+              </Stack.Navigator>
+          </NavigationContainer>
+      </>
   );
 }
 

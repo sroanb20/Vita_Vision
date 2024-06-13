@@ -1,6 +1,7 @@
 export interface IFood {
     _id: string;
     name: string;
+    amount: number;
     
     // Vitamine
     vitaminA?: number; // in micrograms

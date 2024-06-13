@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from "react-native";
-import {IUser} from "../interface/IUser";
+import {IUser} from "../interfaces/IUser";
 
-const Register = ({navigation}) => {
+const Register = ({navigation}:any) => {
     function onCancel() {
         navigation.navigate('Home');
     }
@@ -14,9 +14,9 @@ const Register = ({navigation}) => {
 
     function onRegistration() {
         if (enteredPassword === reenteredPassword) {
-            let user:IUser = {name: enteredUsername, email: enteredEmail, password: enteredPassword};
+            //let user:IUser = {name: enteredUsername, email: enteredEmail, password: enteredPassword};
 
-            onCancel();
+            onCancel()
 
             alert('User successfully created!');
         } else {
